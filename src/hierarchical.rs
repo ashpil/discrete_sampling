@@ -90,7 +90,7 @@ impl<W: Num + PartialOrd + AsPrimitive<R>, R: Real + 'static> Discrete1D<R> for 
                 get_or_zero(level, idx + 0),
                 get_or_zero(level, idx + 1),
             ];
-            idx = idx + select_remap(weights, &mut u) as usize;
+            idx += select_remap(weights, &mut u) as usize;
         }
         idx
     }
@@ -122,7 +122,7 @@ impl<W: Num + PartialOrd + AsPrimitive<R>, R: Real + 'static> Continuous1D<R> fo
                 get_or_zero(level, idx + 0),
                 get_or_zero(level, idx + 1),
             ];
-            idx = idx + select_remap(weights, &mut u) as usize;
+            idx += select_remap(weights, &mut u) as usize;
         }
         (idx.as_() + u) / self.size().as_()
     }

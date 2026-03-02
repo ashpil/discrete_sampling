@@ -8,6 +8,10 @@
 #![allow(internal_features)]
 #![feature(core_intrinsics)]
 
+#![allow(clippy::identity_op)] // symmetry
+#![allow(clippy::collapsible_if)] // sometimes they have different meaning
+#![allow(clippy::let_and_return)] // a name is documentation
+
 #[cfg(not(feature = "std"))]
 extern crate alloc;
 
