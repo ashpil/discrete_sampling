@@ -3,6 +3,7 @@ use exr::prelude::*;
 use discrete_sampling::Data2D;
 use discrete_sampling::ContinuousAlias2D;
 use discrete_sampling::Inversion2D;
+use discrete_sampling::IntegerInversion2D;
 use discrete_sampling::Hierarchical2D;
 use discrete_sampling::distribution::Continuous2D;
 
@@ -37,6 +38,7 @@ fn main() {
     }
 
     visualize_warping::<Inversion2D<f32>>("inversion_warping.exr", &density_image);
+    visualize_warping::<IntegerInversion2D<f32>>("integer_inversion_warping.exr", &density_image);
     visualize_warping::<ContinuousAlias2D<f32>>("alias_warping.exr", &density_image);
     visualize_warping::<Hierarchical2D<f32>>("hierarchical_warping.exr", &density_image);
 }

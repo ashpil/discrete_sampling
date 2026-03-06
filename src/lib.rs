@@ -26,6 +26,10 @@ mod inversion;
 pub use inversion::Inversion1D;
 pub use inversion::Inversion2D;
 
+mod integer_inversion;
+pub use integer_inversion::IntegerInversion1D;
+pub use integer_inversion::IntegerInversion2D;
+
 mod alias;
 pub use alias::Alias1D;
 pub use alias::Alias2D;

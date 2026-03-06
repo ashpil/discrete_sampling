@@ -8,6 +8,7 @@ use rand::{Rng, SeedableRng};
 use discrete_sampling::Data2D;
 use discrete_sampling::Alias2D;
 use discrete_sampling::Inversion2D;
+use discrete_sampling::IntegerInversion2D;
 use discrete_sampling::Hierarchical2D;
 use discrete_sampling::distribution::Discrete2D;
 
@@ -66,6 +67,7 @@ fn main() {
     }
 
     demo_distribution::<Inversion2D<f32>>("inversion_demo.exr", &source_image, &density_image, &rands);
+    demo_distribution::<IntegerInversion2D<f32>>("integer_inversion_demo.exr", &source_image, &density_image, &rands);
     demo_distribution::<Alias2D<f32>>("alias_demo.exr", &source_image, &density_image, &rands);
     demo_distribution::<Hierarchical2D<f32>>("hierarchical_demo.exr", &source_image, &density_image, &rands);
 }
